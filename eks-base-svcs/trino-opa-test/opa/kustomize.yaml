@@ -1,0 +1,8 @@
+resources:
+- deployment-opa.yaml
+- service-opa.yaml
+configMapGenerator:
+- name: opa-policies
+  files:
+  - ./rego_rules/filter_example.rego
+  - ./rego_rules/mask_example.rego
