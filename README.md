@@ -1,7 +1,13 @@
 TODO List
 
+* Terraform:
+        * Investigate why terraform isn't correctly deleting all resources:
+                * ACM Certificate:
+                        * It is associated to load balancers: investigate why they aren't deleted before
+                * ArgoCD deploy: uninstallation completed with 1 error(s): context deadline exceeded
+                * VPC deletion: only deletes after manually deletion...
+
 * ArgoCD:
-        * Deploy applications templating the values file and then passing the values to the application yaml file and apply it with kubectl provider.
 
 * OPA:
         * Deploy the OPA server using ArgoCD;

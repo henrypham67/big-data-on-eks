@@ -21,7 +21,6 @@ resource "helm_release" "argocd" {
 }
 
 # Route 53 record to ArgoCD ingress
-
 data "kubernetes_ingress_v1" "argocd_ingress" {
   metadata {
     name = "argocd-server"
@@ -37,7 +36,7 @@ data "aws_route53_zone" "deploy_zone" {
 
 resource "aws_route53_record" "default_route" {
   zone_id = data.aws_route53_zone.deploy_zone.zone_id
-  name    = "*.${var.domain_name}"
+  name    = "argocd.${var.domain_name}"
   type    = "CNAME"
   ttl     = "300"
   records = [data.kubernetes_ingress_v1.argocd_ingress.status.0.load_balancer.0.ingress.0.hostname]

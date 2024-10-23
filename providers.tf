@@ -8,6 +8,10 @@ terraform {
       source  = "argoproj-labs/argocd"
       version = "7.0.3"
     }
+    kubectl = {
+      source = "gavinbunney/kubectl"
+      version = "1.14.0"
+    }
   }
 }
 
@@ -36,6 +40,16 @@ provider "helm" {
 }
 
 provider "kubernetes" {
+  host                   = local.eks_cluster_endpoint
+  cluster_ca_certificate = base64decode(local.eks_certificate_authority)
+  exec {
+    api_version = "client.authentication.k8s.io/v1beta1"
+    args        = ["eks", "get-token", "--cluster-name", local.eks_cluster_name, "--region", var.aws_region, "--profile", var.aws_profile]
+    command     = "aws"
+  }
+}
+
+provider "kubectl" {
   host                   = local.eks_cluster_endpoint
   cluster_ca_certificate = base64decode(local.eks_certificate_authority)
   exec {

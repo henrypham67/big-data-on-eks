@@ -1,0 +1,18 @@
+apiVersion: "argoproj.io/v1alpha1"
+kind: AppProject
+metadata:
+  name: big-data
+  namespace: cicd
+spec:
+  description: "Contain all Big Data deployments"
+  sourceRepos:
+    - https://trinodb.github.io/charts/
+    - https://github.com/JPedro-loureiro/big-data-on-eks.git
+  destinations:
+    - namespace: "*"
+      server: "https://kubernetes.default.svc"
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  orphanedResources:
+    warn: true

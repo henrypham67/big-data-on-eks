@@ -2218,7 +2218,7 @@ server:
       alb.ingress.kubernetes.io/target-type: ip
       alb.ingress.kubernetes.io/backend-protocol: HTTP
       # alb.ingress.kubernetes.io/healthcheck-path: /v1/status
-      alb.ingress.kubernetes.io/group.name: "default"
+      alb.ingress.kubernetes.io/group.name: "argocd"
 
     # -- Defines which ingress controller will implement the resource
     ingressClassName: "alb"
