@@ -3,8 +3,6 @@
   import future.keywords.if
   import future.keywords.contains
 
-  default allow := false
-
   column_resource := input.action.resource.column
   is_admin {
     input.context.identity.user == "admin"

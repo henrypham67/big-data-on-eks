@@ -4,5 +4,6 @@ resources:
 configMapGenerator:
 - name: opa-policies
   files:
-  - ./rego_rules/filter_example.rego
-  - ./rego_rules/mask_example.rego
+  - ./rego_rules/main.rego
+  - ./rego_rules/filter.rego
+  - ./rego_rules/mask.rego
