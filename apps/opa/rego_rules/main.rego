@@ -2,7 +2,7 @@ package trino
 
 import future.keywords.if
 
-default allow = false
+default allow = true
 
 is_admin if {
 	input.context.identity.user == "admin"
