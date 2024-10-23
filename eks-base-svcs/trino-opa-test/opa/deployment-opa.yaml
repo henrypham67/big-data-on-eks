@@ -29,28 +29,10 @@ spec:
         - "--log-level"
         - "debug"
         volumeMounts:
-        # - readOnly: true
-        #   mountPath: /policies
-        #   name: example-policy
-        # - readOnly: true
-        #   mountPath: /policies
-        #   name: filter-example-policy
-        # - readOnly: true
-        #   mountPath: /policies
-        #   name: mask-example-policy
         - readOnly: true
           mountPath: /policies
           name: opa-policies
       volumes:
-      # - name: example-policy
-      #   configMap:
-      #     name: example-policy
-      # - name: filter-example-policy
-      #   configMap:
-      #     name: filter-example-policy
-      # - name: mask-example-policy
-      #   configMap:
-      #     name: mask-example-policy
       - name: opa-policies
         configMap:
           name: opa-policies

@@ -27,6 +27,7 @@ data "kubernetes_ingress_v1" "argocd_ingress" {
     name = "argocd-server"
     namespace = local.argocd_namespace
   }
+  depends_on = [helm_release.argocd]
 }
 
 data "aws_route53_zone" "deploy_zone" {

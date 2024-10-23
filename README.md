@@ -1,6 +1,7 @@
 TODO List
 
 * ArgoCD:
+        * Deploy applications templating the values file and then passing the values to the application yaml file and apply it with kubectl provider.
 
 * OPA:
         * Deploy the OPA server using ArgoCD;
