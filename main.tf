@@ -20,7 +20,7 @@ module "eks_base_svcs" {
 }
 
 module "argocd_applications" {
-  source = "./argocd-big-data-apps"
+  source = "./argocd-apps"
 
   # AWS Certificate Manager variables
   tls_certificate_arn = module.eks_base_svcs.tls_certificate_arn

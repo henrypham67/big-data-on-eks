@@ -18,6 +18,8 @@ resource "helm_release" "argocd" {
         }
     )
   ]
+
+  depends_on = [helm_release.aws_lbc]
 }
 
 # Route 53 record to ArgoCD ingress
@@ -34,7 +36,7 @@ data "aws_route53_zone" "deploy_zone" {
   private_zone = false
 }
 
-resource "aws_route53_record" "default_route" {
+resource "aws_route53_record" "argocd_route" {
   zone_id = data.aws_route53_zone.deploy_zone.zone_id
   name    = "argocd.${var.domain_name}"
   type    = "CNAME"

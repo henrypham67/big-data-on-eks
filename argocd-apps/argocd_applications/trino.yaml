@@ -1,17 +1,15 @@
 apiVersion: "argoproj.io/v1alpha1"
 kind: Application
 metadata:
-  name: opa
+  name: trino
   namespace: cicd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: big-data
-  source:
-    repoURL: "https://github.com/JPedro-loureiro/big-data-on-eks.git"
-    targetRevision: HEAD
-    path: "apps/opa"
   destination:
     server: https://kubernetes.default.svc
-    namespace: opa
+    namespace: dataproc
   syncPolicy:
     automated:
       prune: true
@@ -29,3 +27,12 @@ spec:
         duration   : "5s"
         factor     : 2
         maxDuration: "1m"
+  source:
+    repoURL: https://trinodb.github.io/charts/
+    targetRevision: 0.28.0
+    chart: trino
+    helm:
+      version: v3
+      values: |
+        ${values}
+  

@@ -1,9 +1,18 @@
+# This resource is needed to wait trino to create the Ingress
+# and the AWS Load Balancer Controller to starting the load balancer creation.
+# Then, we'll be able to get the load balancer DNS to configure the Route 53 record.
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [kubectl_manifest.trino]
+
+  create_duration = "30s"
+}
+
 data "aws_lb" "default_alb" {
   tags = {
     "ingress.k8s.aws/stack" = "default"
   }
 
-  depends_on = [kubectl_manifest.trino]
+  depends_on = [time_sleep.wait_30_seconds]
 }
 
 data "aws_route53_zone" "deploy_zone" {

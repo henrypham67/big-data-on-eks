@@ -21,6 +21,9 @@ resource "kubectl_manifest" "trino" {
     }
   )
 
-  depends_on = [kubectl_manifest.opa]
+  depends_on = [
+    kubectl_manifest.opa
+    ,kubectl_manifest.external_secrets_operator
+  ]
 }
 
