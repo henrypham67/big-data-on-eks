@@ -26,3 +26,4 @@ spec:
         remoteRef:
           # AWS Secrets Manager secret's name
           key: eso-test
+          property: test
