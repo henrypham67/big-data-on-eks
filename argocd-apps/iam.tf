@@ -34,6 +34,6 @@ resource "aws_iam_role_policy_attachment" "external_secret_operator" {
 resource "aws_eks_pod_identity_association" "aws_lbc" {
   cluster_name    = "big-data-on-eks"
   namespace       = "external-secrets"
-  service_account = "external-secrets-operator"
+  service_account = "external-secrets"
   role_arn        = aws_iam_role.external_secret_operator.arn
 }
