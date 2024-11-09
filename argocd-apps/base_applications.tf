@@ -18,3 +18,8 @@ resource "kubectl_manifest" "external_secrets_operator" {
 }
 
 # External Secrets
+resource "kubectl_manifest" "external_secrets" {
+  yaml_body = file("${path.module}/argocd_applications/external_secrets.yaml")
+
+  depends_on = [kubectl_manifest.external_secrets_operator]
+}
