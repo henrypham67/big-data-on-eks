@@ -3,6 +3,3 @@
 *.tfstate*
 *config
 *tfvars
-
-# Trino
-trino/
