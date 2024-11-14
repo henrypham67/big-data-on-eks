@@ -8,6 +8,7 @@ spec:
   sourceRepos:
     - https://trinodb.github.io/charts/
     - https://github.com/JPedro-loureiro/big-data-on-eks.git
+    - https://strimzi.io/charts/
   destinations:
     - namespace: "*"
       server: "https://kubernetes.default.svc"
