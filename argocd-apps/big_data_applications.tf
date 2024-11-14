@@ -27,3 +27,17 @@ resource "kubectl_manifest" "trino" {
   ]
 }
 
+# Strimzi Operator
+resource "kubectl_manifest" "strimzi_operator" {
+  yaml_body = templatefile(
+    "${path.module}/argocd_applications/strimzi_operator.yaml", //templating the argo cd application file
+    {
+      values = file("${path.module}/../apps/kafka/strimzi_operator_values.yaml")
+    }
+  )
+
+  depends_on = [
+    kubectl_manifest.opa
+    ,kubectl_manifest.external_secrets_operator
+  ]
+}
