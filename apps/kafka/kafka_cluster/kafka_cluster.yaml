@@ -16,6 +16,7 @@ spec:
         size: 10Gi
         kraftMetadata: shared
         deleteClaim: false
+        class: ebs-csi-gp3
 ---
 
 apiVersion: kafka.strimzi.io/v1beta2
@@ -36,6 +37,7 @@ spec:
         size: 10Gi
         kraftMetadata: shared
         deleteClaim: false
+        class: ebs-csi-gp3
 ---
 
 apiVersion: kafka.strimzi.io/v1beta2
