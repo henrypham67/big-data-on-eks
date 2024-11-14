@@ -1,3 +1,10 @@
+# OPA Server
+resource "kubectl_manifest" "opa" {
+  yaml_body = file("${path.module}/argocd_applications/opa.yaml")
+
+  depends_on = [kubectl_manifest.big_data_project]
+}
+
 # External Secrets Operator
 resource "kubectl_manifest" "external_secrets_operator" {
   yaml_body = templatefile(
