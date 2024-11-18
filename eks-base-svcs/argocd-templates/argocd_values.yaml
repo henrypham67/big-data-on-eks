@@ -175,6 +175,8 @@ configs:
     # -- The name of tracking label used by Argo CD for resource pruning
     application.instanceLabelKey: argocd.argoproj.io/instance
 
+    application.resourceTrackingMethod: annotation+label
+
     # -- Enable logs RBAC enforcement
     ## Ref: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/2.3-2.4/#enable-logs-rbac-enforcement
     server.rbac.log.enforce.enable: false

@@ -39,5 +39,5 @@ resource "kubectl_manifest" "strimzi_operator" {
 resource "kubectl_manifest" "kafka_cluster" {
   yaml_body = file("${path.module}/argocd_applications/kafka_cluster.yaml")
 
-  depends_on = [kubectl_manifest.big_data_project]
+  depends_on = [kubectl_manifest.strimzi_operator]
 }
