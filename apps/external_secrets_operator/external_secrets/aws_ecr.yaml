@@ -2,7 +2,7 @@ apiVersion: generators.external-secrets.io/v1alpha1
 kind: ECRAuthorizationToken
 metadata:
   name: ecr-gen
-  namespace: external-secrets
+  namespace: kafka
 spec:
 
   # specify aws region (mandatory)
