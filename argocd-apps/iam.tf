@@ -31,6 +31,11 @@ resource "aws_iam_role_policy_attachment" "external_secret_operator" {
   role       = aws_iam_role.external_secret_operator.name
 }
 
+resource "aws_iam_role_policy_attachment" "external_secret_operator_ecr" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"
+  role       = aws_iam_role.external_secret_operator.name
+}
+
 resource "aws_eks_pod_identity_association" "external_secret_operator" {
   cluster_name    = "big-data-on-eks"
   namespace       = "external-secrets"
