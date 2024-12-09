@@ -7,7 +7,7 @@ spec:
   externalSecretName: azure-entra-oauth2
   namespaceSelectors:
   - matchLabels:
-      kubernetes.io/metadata.name: dataproc
+      kubernetes.io/metadata.name: trino
   externalSecretSpec:
     refreshInterval: 1h
     secretStoreRef:
