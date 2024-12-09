@@ -2,7 +2,7 @@ apiVersion: "argoproj.io/v1alpha1"
 kind: AppProject
 metadata:
   name: base-applications
-  namespace: cicd
+  namespace: argocd
 spec:
   description: "Contain all Base services deployments"
   sourceRepos:

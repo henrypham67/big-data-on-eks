@@ -1,11 +1,11 @@
 locals {
-  namespaces = [
-    "argocd"
-    ,"external-secrets"
-    ,"kafka"
-    ,"opa"
-    ,"trino"
-  ]
+  namespaces = {
+    argocd = "argocd"
+    external-secrets = "external-secrets"
+    kafka = "kafka"
+    opa = "opa"
+    trino = "trino"
+  }
 }
 
 resource "kubectl_manifest" "namespaces" {

@@ -2,7 +2,7 @@ apiVersion: "argoproj.io/v1alpha1"
 kind: AppProject
 metadata:
   name: big-data
-  namespace: cicd
+  namespace: argocd
 spec:
   description: "Contain all Big Data deployments"
   sourceRepos:

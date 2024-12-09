@@ -1,9 +1,13 @@
 To-do:
 
+* AWS Volumes:
+ * Find a way to delete all volumes when the k8s resource is deleted
+
 * Kafka
     * Deploy the Strimzi Operator; --ok
     * Deploy the Kafka cluster; --ok
     * Delpoy the Kafka Connect Cluster;
+        * The ecr-secrets needs to be type: kubernetes.io/dockerconfigjson. Verify how to create that with ESO: [https://github.com/orgs/strimzi/discussions/9359#discussioncomment-7620299]
         * Create the AWS ECR; --ok
         * Create a Role to push image to the ECR repo [https://docs.aws.amazon.com/pt_br/AmazonECR/latest/userguide/ECR_on_EKS.html];
             * The EKS should be able to pull images by default since its role has a policy attached for it [https://github.com/terraform-aws-modules/terraform-aws-eks/blob/97a08c8aff5dbf51a86b4c8cd88a858336cd0208/modules/eks-managed-node-group/main.tf#L530]
@@ -14,4 +18,4 @@ To-do:
         * In last case, let's build the image out of strimzi CRD, build and push it to AWS ECR using a CI/CD tool;
 
 * External Secrets Operator:
-    * Trino was configured to execute after the ESO once it depends on the azure-entra-oauth2 secret to be created. But, ESO is trying to create the secret on the trino namespace which doesn't exists yet since trino wasn't deployed. 
+    * Trino was configured to execute after the ESO once it depends on the azure-entra-oauth2 secret to be created. But, ESO is trying to create the secret on the trino namespace which doesn't exists yet since trino wasn't deployed.
