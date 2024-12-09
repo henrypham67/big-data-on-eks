@@ -9,7 +9,7 @@ spec:
   project: big-data
   destination:
     server: https://kubernetes.default.svc
-    namespace: dataproc
+    namespace: trino
   syncPolicy:
     automated:
       prune: true

@@ -1,11 +1,10 @@
 locals {
-  argocd_namespace = "cicd"
+  argocd_namespace = "argocd"
 }
 
 resource "helm_release" "argocd" {
   name             = "argocd"
   namespace        = local.argocd_namespace
-  create_namespace = true
   repository       = "https://argoproj.github.io/argo-helm"
   chart            = "argo-cd"
   version          = "7.6.12"
@@ -19,7 +18,10 @@ resource "helm_release" "argocd" {
     )
   ]
 
-  depends_on = [helm_release.aws_lbc]
+  depends_on = [
+    helm_release.aws_lbc
+    ,kubectl_manifest.namespaces
+  ]
 }
 
 # Route 53 record to ArgoCD ingress
