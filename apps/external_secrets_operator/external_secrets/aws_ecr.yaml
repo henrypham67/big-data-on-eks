@@ -49,8 +49,8 @@ spec:
         engineVersion: v2
         type: kubernetes.io/dockerconfigjson
         data:
-          .dockerconfigjson: |
-            {"auths":{"{{ .proxy_endpoint }}":{"username":"{{ .username }}","password":"{{ .password }}","auth":"{{ .username}}:{{ .password }} | b64enc"}}}
+          .dockerconfigjson: | #https://external-secrets.io/latest/guides/common-k8s-secret-types/#dockerconfigjson-example
+            {"auths":{"{{ .proxy_endpoint }}":{"username":"{{ .username }}","password":"{{ .password }}","auth":"{{ printf "%s:%s" .username .password | b64enc }}"}}}
     dataFrom:
     - sourceRef:
         generatorRef:
