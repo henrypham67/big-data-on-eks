@@ -30,7 +30,7 @@ spec:
       # recommend changing this to your own container registry or using a different
       # image name for any other than demo purposes.
       image: 590183863248.dkr.ecr.us-east-1.amazonaws.com/big-data-on-eks/kafka-connect:latest
-      pushSecret: ecr-test
+      pushSecret: ecr-secret
     plugins:
       - name: kafka-connect-file
         artifacts:
