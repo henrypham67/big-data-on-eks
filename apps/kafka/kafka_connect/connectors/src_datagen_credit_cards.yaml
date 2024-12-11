@@ -12,7 +12,7 @@ spec:
   class: io.confluent.kafka.connect.datagen.DatagenConnector
   tasksMax: 2
   config:
-    topic: credit-cards
+    kafka.topic: credit-cards
     quickstart: credit_cards
     key.converter: org.apache.kafka.connect.storage.StringConverter
     value.converter: org.apache.kafka.connect.json.JsonConverter

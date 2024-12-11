@@ -48,3 +48,10 @@ resource "kubectl_manifest" "kafka_connect_cluster" {
 
   depends_on = [kubectl_manifest.kafka_cluster]
 }
+
+# Kafka Connect Connectors
+resource "kubectl_manifest" "kafka_connect_connectors" {
+  yaml_body = file("${path.module}/argocd_applications/kafka_connect_connectors.yaml")
+
+  depends_on = [kubectl_manifest.kafka_connect_cluster]
+}
