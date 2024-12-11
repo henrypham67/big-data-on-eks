@@ -2,11 +2,11 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaConnect
 metadata:
   name: main-kafka-connect-cluster
-#  annotations:
-#  # use-connector-resources configures this KafkaConnect
-#  # to use KafkaConnector resources to avoid
-#  # needing to call the Connect REST API directly
-#    strimzi.io/use-connector-resources: "true"
+  annotations:
+  # use-connector-resources configures this KafkaConnect
+  # to use KafkaConnector resources to avoid
+  # needing to call the Connect REST API directly
+    strimzi.io/use-connector-resources: "true"
 spec:
   version: 3.8.0
   replicas: 1
@@ -38,7 +38,7 @@ spec:
             group: org.apache.kafka
             artifact: connect-file
             version: 3.8.0
-      - name: datagen-src
+      - name: src-datagen
         artifacts:
           - type: zip
             url: "https://d2p6pa21dvn84.cloudfront.net/api/plugins/confluentinc/kafka-connect-datagen/versions/0.6.6/confluentinc-kafka-connect-datagen-0.6.6.zip"
