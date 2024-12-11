@@ -12,7 +12,7 @@ spec:
   class: io.confluent.kafka.connect.datagen.DatagenConnector
   tasksMax: 2
   config:
-    topic: product
+    kafka.topic: product
     quickstart: product
     key.converter: org.apache.kafka.connect.storage.StringConverter
     value.converter: org.apache.kafka.connect.json.JsonConverter
