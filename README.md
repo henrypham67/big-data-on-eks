@@ -1,8 +1,5 @@
 To-do:
 
-* AWS Volumes:
- * Find a way to delete all volumes when the k8s resource is deleted
-
 * Kafka
     * Deploy the Strimzi Operator; --ok
     * Deploy the Kafka cluster; --ok

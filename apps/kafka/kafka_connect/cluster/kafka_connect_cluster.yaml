@@ -38,3 +38,7 @@ spec:
             group: org.apache.kafka
             artifact: connect-file
             version: 3.8.0
+      - name: datagen-src
+        artifacts:
+          - type: zip
+            url: "https://d2p6pa21dvn84.cloudfront.net/api/plugins/confluentinc/kafka-connect-datagen/versions/0.6.6/confluentinc-kafka-connect-datagen-0.6.6.zip"
