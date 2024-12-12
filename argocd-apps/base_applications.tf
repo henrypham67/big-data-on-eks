@@ -24,9 +24,17 @@ resource "kubectl_manifest" "external_secrets_operator" {
   depends_on = [kubectl_manifest.base_applications_project]
 }
 
+# This resource is needed to wait the ESO operator to create
+# the CRDs, so we'll be able to create the secrets.
+resource "time_sleep" "wait_eso_operator" {
+  depends_on = [kubectl_manifest.external_secrets_operator]
+
+  create_duration = "30s"
+}
+
 # External Secrets
 resource "kubectl_manifest" "external_secrets" {
   yaml_body = file("${path.module}/argocd_applications/external_secrets.yaml")
 
-  depends_on = [kubectl_manifest.external_secrets_operator]
+  depends_on = [time_sleep.wait_eso_operator]
 }
