@@ -13,7 +13,7 @@ spec:
   tasksMax: 2
   config:
     topics: users
-    iceberg.tables: default.users
+    iceberg.tables: datalake_bronze.users
     iceberg.catalog.catalog-impl: org.apache.iceberg.aws.glue.GlueCatalog
     iceberg.catalog.warehouse: "s3://datalake-590183863248"
     iceberg.catalog.io-impl: org.apache.iceberg.aws.s3.S3FileIO

@@ -29,7 +29,7 @@ resource "kubectl_manifest" "external_secrets_operator" {
 resource "time_sleep" "wait_eso_operator" {
   depends_on = [kubectl_manifest.external_secrets_operator]
 
-  create_duration = "30s"
+  create_duration = "60s"
 }
 
 # External Secrets
