@@ -6,6 +6,17 @@
             "Action": [
                 "glue:GetTable"
                 ,"glue:GetDatabase"
+                ,"glue:CreateTable"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject"
+                ,"s3:GetObject"
             ],
             "Resource": [
                 "*"
