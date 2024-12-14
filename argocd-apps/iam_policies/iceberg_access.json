@@ -6,6 +6,7 @@
             "Action": [
                 "glue:GetTable"
                 ,"glue:GetDatabase"
+                ,"glue:GetDatabases"
                 ,"glue:CreateTable"
             ],
             "Resource": [

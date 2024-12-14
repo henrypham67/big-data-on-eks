@@ -21,7 +21,7 @@ image:
   # -- Repository location of the Trino image, typically `organization/imagename`
   repository: trinodb/trino
   # -- Image tag, defaults to the Trino release version specified as `appVersion` from Chart.yaml
-  tag: "461"
+  tag: "467"
   # -- Optional digest value of the image specified as `sha256:abcd...`. A specified value overrides `tag`.
   digest: ""
   # -- When true, only the content in `repository` is used as image reference
@@ -317,7 +317,7 @@ catalogs:
     iceberg.file-format=PARQUET
     iceberg.compression-codec=ZSTD
     hive.metastore.glue.region=us-east-1
-    hive.metastore.glue.use-web-identity-token-credentials-provider=true
+    fs.native-s3.enabled=true
 # catalogs -- Configure
 # [catalogs](https://trino.io/docs/current/installation/deployment.html#catalog-properties).
 # @raw
