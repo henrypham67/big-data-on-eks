@@ -4,10 +4,7 @@
         {
             "Effect": "Allow",
             "Action": [
-                "glue:GetTable"
-                ,"glue:GetDatabase"
-                ,"glue:GetDatabases"
-                ,"glue:CreateTable"
+                "glue:*"
             ],
             "Resource": [
                 "*"
