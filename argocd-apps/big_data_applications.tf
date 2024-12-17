@@ -55,3 +55,24 @@ resource "kubectl_manifest" "kafka_connect_connectors" {
 
   depends_on = [kubectl_manifest.kafka_connect_cluster]
 }
+
+# Airflow
+resource "kubectl_manifest" "airflow" {
+  yaml_body = templatefile(
+    "${path.module}/argocd_applications/airflow.yaml", //templating the argo cd application file
+    {
+      values = replace(
+        templatefile(
+          "${path.module}/../apps/airflow/airflow_values.yaml", //templating the values file
+          {
+            tls_certificate_arn = var.tls_certificate_arn
+            domain_name = var.domain_name
+          }
+        ), "\n", "\n        ") // adding identation to yaml files
+    }
+  )
+
+  depends_on = [
+    kubectl_manifest.trino
+  ]
+}

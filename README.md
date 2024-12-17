@@ -1,12 +1,12 @@
 To-do:
 
+* Airflow:
+    * Deploy Airflow; --ok
+    * Run DBT project using Airflow (Astronomer Cosmos);
 * DBT:
     * Deploy DBT
-    * Integrate DBT with Iceberg tables;
+    * Integrate DBT with Trino and Iceberg tables;
     * Create the Silver and Gold layers using DBT;
-* Airflow:
-    * Deploy Airflow;
-    * Run DBT project using Airflow;
 * Superset:
     * Deploy Superset:
         * Authenticate using OAuth2 (Azure entra ID)

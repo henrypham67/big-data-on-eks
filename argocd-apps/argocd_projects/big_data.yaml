@@ -9,6 +9,7 @@ spec:
     - https://trinodb.github.io/charts/
     - https://github.com/JPedro-loureiro/big-data-on-eks.git
     - https://strimzi.io/charts/
+    - https://airflow.apache.org
   destinations:
     - namespace: "*"
       server: "https://kubernetes.default.svc"
