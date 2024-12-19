@@ -1,0 +1,10 @@
+datalake:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: oauth 
+      host: https://trino.bigdataoneks.click
+      database: objectstore
+      schema: datalake_bronze
+      port: 433
