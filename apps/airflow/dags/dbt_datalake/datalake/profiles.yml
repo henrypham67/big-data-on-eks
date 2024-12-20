@@ -3,7 +3,9 @@ datalake:
   outputs:
     oauth:
       type: trino
-      method: oauth_console
+      method: ldap
+      user: dbt_trino
+      password: dbt_trino
       host: trino.bigdataoneks.click
       database: objectstore
       schema: datalake_bronze
