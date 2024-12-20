@@ -4,7 +4,7 @@ To-do:
     * Deploy Airflow; --ok
     * Run DBT project using Airflow (Astronomer Cosmos);
 * DBT:
-    * Deploy DBT
+    * Deploy DBT --ok
     * Integrate DBT with Trino and Iceberg tables;
     * Create the Silver and Gold layers using DBT;
 * Superset:

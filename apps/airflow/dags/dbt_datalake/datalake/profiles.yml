@@ -3,7 +3,7 @@ datalake:
   outputs:
     oauth:
       type: trino
-      method: oauth
+      method: oauth_console
       host: trino.bigdataoneks.click
       database: objectstore
       schema: datalake_bronze
