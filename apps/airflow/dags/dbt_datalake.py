@@ -4,12 +4,9 @@ import os
 from datetime import datetime
 
 profile_config = ProfileConfig(
-    profile_name="default",
+    profile_name="datalake",
     target_name="dev",
-    profile_mapping=PostgresUserPasswordProfileMapping(
-        conn_id="airflow_db",
-        profile_args={"schema": "public"},
-    ),
+    profiles_yml_filepath="/opt/airflow/dags/repo/apps/airflow/dags/dbt_datalake/datalake/profiles.yml"
 )
 
 my_cosmos_dag = DbtDag(
