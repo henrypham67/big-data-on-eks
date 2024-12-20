@@ -14,7 +14,7 @@ profile_config = ProfileConfig(
 
 my_cosmos_dag = DbtDag(
     project_config=ProjectConfig(
-        "/usr/local/airflow/dags/dbt_datalake/datalake",
+        "/opt/airflow/dags/repo/apps/airflow/dags/dbt_datalake/datalake",
     ),
     profile_config=profile_config,
     execution_config=ExecutionConfig(
