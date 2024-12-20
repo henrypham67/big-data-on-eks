@@ -10,27 +10,6 @@ spec:
 
 ---
 
-# apiVersion: external-secrets.io/v1beta1
-# kind: ClusterExternalSecret
-# metadata:
-#   name: ecr-secret
-#   namespace: external-secrets
-# spec:
-#   externalSecretName: ecr-secret
-#   namespaceSelectors:
-#   - matchLabels:
-#       kubernetes.io/metadata.name: kafka
-#   externalSecretSpec:
-#     refreshInterval: "1h"
-#     target:
-#       name: ecr-secret
-#     dataFrom:
-#     - sourceRef:
-#         generatorRef:
-#           apiVersion: generators.external-secrets.io/v1alpha1
-#           kind: ECRAuthorizationToken
-#           name: "ecr-gen"
-
 apiVersion: external-secrets.io/v1beta1
 kind: ClusterExternalSecret
 metadata:
