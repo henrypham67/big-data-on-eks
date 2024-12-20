@@ -426,7 +426,7 @@ service:
   # automatically](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport-custom-port).
   nodePort: ""
 
-auth: {}
+auth:
 # auth -- Available authentication methods.
 # @raw
 # Use username and password provided as a [password file](https://trino.io/docs/current/security/password-file.html#file-format):
@@ -435,7 +435,7 @@ auth: {}
 # ```
 # Set the name of a secret containing this file in the password.db key
 # ```yaml
-#  passwordAuthSecret: "trino-password-authentication"
+  passwordAuthSecret: "trino-dbt-user"
 # ```
 # Additionally, set [users' groups](https://trino.io/docs/current/security/group-file.html#file-format):
 # ```yaml
