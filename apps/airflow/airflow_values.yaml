@@ -683,12 +683,12 @@ workers:
 
 
   resources:
-    limits:
-      cpu: 1000m
-      memory: 3Gi
-    requests:
-      cpu: 500m
-      memory: 2Gi
+    # limits:
+    #   cpu: 1000m
+    #   memory: 3Gi
+    # requests:
+    #   cpu: 500m
+    #   memory: 2Gi
 
   # Grace period for tasks to finish after SIGTERM is sent from kubernetes
   terminationGracePeriodSeconds: 600
@@ -896,12 +896,12 @@ scheduler:
       # minAvailable: 1
 
   resources:
-    limits:
-      cpu: 500m
-      memory: 1Gi
-    requests:
-      cpu: 200m
-      memory: 1Gi
+    # limits:
+    #   cpu: 500m
+    #   memory: 1Gi
+    # requests:
+    #   cpu: 200m
+    #   memory: 1Gi
 
   # This setting tells kubernetes that its ok to evict
   # when it wants to scale a node down.
@@ -1320,7 +1320,7 @@ webserver:
   startupProbe:
     timeoutSeconds: 20
     failureThreshold: 6
-    periodSeconds: 10
+    periodSeconds: 30
     scheme: HTTP
 
   # Number of webservers
@@ -1386,12 +1386,12 @@ webserver:
         - port: "{{ .Values.ports.airflowUI }}"
 
   resources:
-    limits:
-      cpu: 2000m
-      memory: 3Gi
-    requests:
-      cpu: 1500m
-      memory: 3Gi
+    # limits:
+    #   cpu: 2000m
+    #   memory: 1Gi
+    # requests:
+    #   cpu: 1500m
+    #   memory: 1Gi
 
   # Create initial user.
   defaultUser:
@@ -2601,13 +2601,13 @@ dags:
     ## optional subpath for dag volume mount
     subPath: ~
   gitSync:
-    enabled: false
+    enabled: true
 
     # git repo clone url
     # ssh example: git@github.com:apache/airflow.git
     # https example: https://github.com/apache/airflow.git
-    repo: https://github.com/apache/airflow.git
-    branch: v2-2-stable
+    repo: https://github.com/JPedro-loureiro/big-data-on-eks
+    branch: main
     rev: HEAD
     # The git revision (branch, tag, or hash) to check out, v4 only
     ref: v2-2-stable
@@ -2616,7 +2616,7 @@ dags:
     maxFailures: 0
     # subpath within the repo where dags are located
     # should be "" if dags are at repo root
-    subPath: "tests/dags"
+    subPath: "apps/airflow/dags"
     # if your repo needs a user name password
     # you can load them to a k8s secret like the one below
     #   ---
