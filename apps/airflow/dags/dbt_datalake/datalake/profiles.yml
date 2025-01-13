@@ -4,8 +4,8 @@ datalake:
     oauth:
       type: trino
       method: password
-      user: dbt_trino
-      password: dbt_trino
+      user: dbt_user
+      password: dbt_user
       host: trino.bigdataoneks.click
       database: objectstore
       schema: datalake_bronze
