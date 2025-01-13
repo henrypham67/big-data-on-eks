@@ -9,4 +9,5 @@ datalake:
       host: trino.bigdataoneks.click
       database: objectstore
       schema: datalake_bronze
+      http_scheme: https
       port: 443
