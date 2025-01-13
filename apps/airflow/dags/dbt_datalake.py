@@ -1,5 +1,4 @@
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
-from cosmos.profiles import PostgresUserPasswordProfileMapping
 import os
 from datetime import datetime
 
