@@ -3,11 +3,11 @@ datalake:
   outputs:
     oauth:
       type: trino
-      method: password
+      method: ldap
       user: dbt_user
       password: dbt_user
       host: trino.bigdataoneks.click
       database: objectstore
       schema: datalake_bronze
-      http_scheme: https
+      # http_scheme: https
       port: 443
