@@ -83,7 +83,7 @@ images:
     tag: latest
     # Specifying digest takes precedence over tag.
     digest: ~
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
   # To avoid images with user code, you can turn this to 'true' and
   # all the 'run-airflow-migrations' and 'wait-for-airflow-migrations' containers/jobs
   # will use the images from 'defaultAirflowRepository:defaultAirflowTag' values
@@ -2549,6 +2549,14 @@ config:
     multi_namespace_mode: '{{ ternary "True" "False" .Values.multiNamespaceMode }}'
   triggerer:
     default_capacity: 1000
+  # secrets:
+  #   backend: 'airflow.providers.amazon.aws.secrets.secrets_manager.SecretsManagerBackend'
+  #   backend_kwargs: |
+  #     {
+  #       "connections_prefix": "airflow/connections",
+  #       "variables_prefix": "airflow/variables",
+  #       "config_prefix": "airflow/config"
+  #     }
 # yamllint enable rule:line-length
 
 # Whether Airflow can launch workers and/or pods in multiple namespaces

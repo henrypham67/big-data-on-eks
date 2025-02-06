@@ -73,3 +73,11 @@ resource "aws_eks_pod_identity_association" "iceberg_trino" {
   service_account = "trino"
   role_arn        = aws_iam_role.iceberg_access.arn
 }
+
+# Airflow
+resource "aws_eks_pod_identity_association" "airflow_secrets_manager" {
+  cluster_name    = "big-data-on-eks"
+  namespace       = "airflow"
+  service_account = "airflow-scheduler"
+  role_arn        = aws_iam_role.external_secret_operator.arn
+}
