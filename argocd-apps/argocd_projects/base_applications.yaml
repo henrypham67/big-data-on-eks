@@ -6,7 +6,7 @@ metadata:
 spec:
   description: "Contain all Base services deployments"
   sourceRepos:
-    - https://github.com/JPedro-loureiro/big-data-on-eks.git
+    - https://github.com/henrypham67/big-data-on-eks.git
     - https://charts.external-secrets.io
   destinations:
     - namespace: "*"

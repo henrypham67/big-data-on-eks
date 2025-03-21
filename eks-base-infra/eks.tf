@@ -25,9 +25,9 @@ module "eks" {
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["t3a.medium"]
 
-      min_size     = 2
-      max_size     = 2
-      desired_size = 2
+      min_size     = 4
+      max_size     = 4
+      desired_size = 4
 
       capacity_type = "ON_DEMAND"
 

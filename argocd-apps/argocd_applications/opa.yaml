@@ -8,7 +8,7 @@ metadata:
 spec:
   project: big-data
   source:
-    repoURL: "https://github.com/JPedro-loureiro/big-data-on-eks.git"
+    repoURL: "https://github.com/henrypham67/big-data-on-eks.git"
     targetRevision: HEAD
     path: "apps/opa"
   destination:

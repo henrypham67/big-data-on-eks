@@ -7,7 +7,7 @@ spec:
   description: "Contain all Big Data deployments"
   sourceRepos:
     - https://trinodb.github.io/charts/
-    - https://github.com/JPedro-loureiro/big-data-on-eks.git
+    - https://github.com/henrypham67/big-data-on-eks.git
     - https://strimzi.io/charts/
     - https://airflow.apache.org
   destinations:

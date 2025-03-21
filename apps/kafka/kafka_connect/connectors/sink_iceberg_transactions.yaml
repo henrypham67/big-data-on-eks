@@ -15,7 +15,7 @@ spec:
     topics: transactions
     iceberg.tables: datalake_bronze.transactions
     iceberg.catalog.catalog-impl: org.apache.iceberg.aws.glue.GlueCatalog
-    iceberg.catalog.warehouse: "s3://datalake-bronze-590183863248"
+    iceberg.catalog.warehouse: "s3://datalake-bronze-211125525814"
     iceberg.catalog.io-impl: org.apache.iceberg.aws.s3.S3FileIO
     iceberg.tables.auto-create-enabled: true
     iceberg.tables.evolve-schema-enabled: true

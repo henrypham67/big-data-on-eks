@@ -8,3 +8,6 @@ deploy:
 
 clean:
 	rm terraform.tfstate*
+
+get-kubeconfig:
+	aws eks update-kubeconfig --name big-data-on-eks --profile test --kubeconfig .kubeconfig
