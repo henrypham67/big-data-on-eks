@@ -79,8 +79,8 @@ airflowVersion: "2.9.3"
 # Images
 images:
   airflow:
-    repository: 590183863248.dkr.ecr.us-east-1.amazonaws.com/big-data-on-eks/airflow
-    tag: latest
+    repository: hieupham0607/debezium-postgres
+    tag: airflow
     # Specifying digest takes precedence over tag.
     digest: ~
     pullPolicy: Always
@@ -144,7 +144,7 @@ ingress:
   # Configs for the Ingress of the web Service
   web:
     # Enable web ingress resource
-    enabled: true
+    enabled: false
 
     # Annotations for the web Ingress
     annotations:

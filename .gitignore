@@ -3,3 +3,5 @@
 *.tfstate*
 *config
 *tfvars
+.envrc
+scripts/kafka-connect

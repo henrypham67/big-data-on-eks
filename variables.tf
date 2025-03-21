@@ -8,7 +8,7 @@ variable "aws_profile" {
   type        = string
 }
 
-variable "domain_name" {
-  description = "The route53 domain name to use for configure ingresses."
-  type        = string
-}
+# variable "domain_name" {
+#   description = "The route53 domain name to use for configure ingresses."
+#   type        = string
+# }

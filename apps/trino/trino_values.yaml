@@ -56,7 +56,8 @@ server:
     # -- Trino supports multiple [authentication
     # types](https://trino.io/docs/current/security/authentication-types.html):
     # PASSWORD, CERTIFICATE, OAUTH2, JWT, KERBEROS.
-    authenticationType: "OAUTH2,PASSWORD"
+    authenticationType: "PASSWORD"
+    # authenticationType: "OAUTH2,PASSWORD"
     query:
       maxMemory: "4GB"
   exchangeManager: {}
@@ -81,12 +82,7 @@ server:
   # ```
 
   workerExtraConfig: ""
-  coordinatorExtraConfig: |
-    http-server.authentication.oauth2.issuer=$${ENV:oauth2_issuer}
-    http-server.authentication.oauth2.client-id=$${ENV:oauth2_client_id}
-    http-server.authentication.oauth2.client-secret=$${ENV:oauth2_client_secret}
-    http-server.authentication.oauth2.principal-field=$${ENV:oauth2_principal_field}
-    web-ui.authentication.type=oauth2
+  coordinatorExtraConfig: ""
   autoscaling:
     enabled: false
     maxReplicas: 5
@@ -355,8 +351,8 @@ envFrom:
 #   - secretRef:
 #     name: extra-secret
 # ```
-  - secretRef:
-      name: azure-entra-oauth2
+  # - secretRef:
+  #     name: azure-entra-oauth2
 
 
 initContainers: {}
@@ -431,11 +427,11 @@ auth:
 # @raw
 # Use username and password provided as a [password file](https://trino.io/docs/current/security/password-file.html#file-format):
 # ```yaml
-#  passwordAuth: "username:encrypted-password-with-htpasswd"
+  passwordAuth: "test:$2y$10$XIgI/hFhCDlysb7BKwsYne4AWNDD/KfCuypPNFEJj.v6Dz2eOFviO"
 # ```
 # Set the name of a secret containing this file in the password.db key
 # ```yaml
-  passwordAuthSecret: "trino-dbt-user"
+  # passwordAuthSecret: "trino-dbt-user"
 # ```
 # Additionally, set [users' groups](https://trino.io/docs/current/security/group-file.html#file-format):
 # ```yaml
@@ -978,7 +974,7 @@ serviceMonitor:
 commonLabels: {}
 
 ingress:
-  enabled: true
+  enabled: false
   className: "alb"
   annotations:
     alb.ingress.kubernetes.io/certificate-arn: ${tls_certificate_arn}

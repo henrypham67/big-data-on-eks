@@ -1,13 +1,13 @@
 resource "aws_ecr_repository" "kafka_connect" {
   name                 = "big-data-on-eks/kafka-connect"
   image_tag_mutability = "MUTABLE"
-  force_delete = true
+  force_delete         = true
 }
 
 resource "aws_ecr_repository" "airflow" {
   name                 = "big-data-on-eks/airflow"
   image_tag_mutability = "MUTABLE"
-  force_delete = true
+  force_delete         = true
 }
 
 # Should be excluded after CI/CD pipeline implementation

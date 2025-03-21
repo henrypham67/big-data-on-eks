@@ -14,10 +14,8 @@ resource "kubectl_manifest" "external_secrets_operator" {
         templatefile(
           "${path.module}/../apps/external_secrets_operator/external_secrets_operator_values.yaml", //templating the values file
           {
-            tls_certificate_arn = var.tls_certificate_arn
-            domain_name = var.domain_name
           }
-        ), "\n", "\n        ") // adding identation to yaml files
+      ), "\n", "\n        ") // adding identation to yaml files
     }
   )
 

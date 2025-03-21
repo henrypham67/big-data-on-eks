@@ -61,6 +61,6 @@ resource "helm_release" "aws_lbc" {
 
   depends_on = [
     aws_eks_pod_identity_association.aws_lbc
-    ,aws_iam_role_policy_attachment.aws_lbc
+    , aws_iam_role_policy_attachment.aws_lbc
   ]
 }

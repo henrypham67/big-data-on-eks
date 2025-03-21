@@ -7,16 +7,16 @@ resource "kubectl_manifest" "trino" {
         templatefile(
           "${path.module}/../apps/trino/trino_values.yaml", //templating the values file
           {
-            tls_certificate_arn = var.tls_certificate_arn
-            domain_name = var.domain_name
+            tls_certificate_arn = ""
+            domain_name         = ""
           }
-        ), "\n", "\n        ") // adding identation to yaml files
+      ), "\n", "\n        ") // adding identation to yaml files
     }
   )
 
   depends_on = [
     kubectl_manifest.opa
-    ,kubectl_manifest.external_secrets_operator
+    , kubectl_manifest.external_secrets_operator
   ]
 }
 
@@ -31,7 +31,7 @@ resource "kubectl_manifest" "strimzi_operator" {
 
   depends_on = [
     kubectl_manifest.opa
-    ,kubectl_manifest.external_secrets_operator
+    , kubectl_manifest.external_secrets_operator
   ]
 }
 
@@ -65,10 +65,10 @@ resource "kubectl_manifest" "airflow" {
         templatefile(
           "${path.module}/../apps/airflow/airflow_values.yaml", //templating the values file
           {
-            tls_certificate_arn = var.tls_certificate_arn
-            domain_name = var.domain_name
+            tls_certificate_arn = ""
+            domain_name         = ""
           }
-        ), "\n", "\n        ") // adding identation to yaml files
+      ), "\n", "\n        ") // adding identation to yaml files
     }
   )
 
